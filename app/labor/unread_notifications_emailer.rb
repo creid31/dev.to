@@ -10,7 +10,7 @@ class UnreadNotificationsEmailer
       UnreadNotificationsEmailer.new(user).send_email_if_appropriate
     rescue StandardError => e
       logger = Logger.new(STDOUT)
-      logger = Airbrake::AirbrakeLogger.new(logger)
+      # logger = Airbrake::AirbrakeLogger.new(logger)
       logger.error(e)
     end
   end
